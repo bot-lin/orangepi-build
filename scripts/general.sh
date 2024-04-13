@@ -619,11 +619,11 @@ fetch_from_repo()
 		display_alert " Cleaning .... " "$(git status -s | wc -l) files"
 
 		# Return the files that are tracked by git to the initial state.
-		#git checkout -f -q HEAD
+		git checkout -f -q HEAD
 
 		# Files that are not tracked by git and were added
 		# when the patch was applied must be removed.
-		#git clean -qdf
+		git clean -qdf
 	else
 		# working directory is clean, nothing to do
 		display_alert "Up to date"
